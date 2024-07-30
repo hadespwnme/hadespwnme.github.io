@@ -1,109 +1,267 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Pwnme Hades</title>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-    body {
-      background: black;
-      overflow: hidden;
-    }
-
-    .matrix-container {
-      color: white;
-      text-shadow: 1px 1px 5px cyan;
-      font-family: monospace;
-      font-size: 20px;
-      line-height: 30px;
-      text-align: center;
-    }
-
-    .social-icons {
-      margin-top: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .social-icons a {
-      color: white;
-      text-shadow: 1px 1px 5px cyan;
-      font-size: 40px;
-      margin: 0 10px;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      color: red;
-    }
-    .custom-image-class {
-      border-radius: 50%;
-    }
-
-
-    @media (min-width: 768px) {
-      .matrix-container {
-        font-size: 36px;
-        line-height: 42px;
-      }
-
-      .social-icons a {
-        font-size: 50px;
-      }
-    }
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-</head>
-<body>
-  <div class="matrix-container"></div>
-
-  <div class="social-icons">
-    <a href="https://github.com/hadespwnme"><i class="fab fa-github"></i></a>
-    <a href="http://instagram.com/yinghades_"><i class="fab fa-instagram"></i></a>
-    <a href="mailto:hadespwn0@gmail.com"><i class="fas fa-envelope"></i></a>
-    <a href="#" id="discord-icon"><i class="fab fa-discord"></i></a>
-  </div>
-
-  <script>
-    const container = document.querySelector('.matrix-container');
-
-    const chars = ['0', '1'];
-    const numCols = 26;
-    const numRows = 13;
-    const delay = 100;
-
-    function generateMatrixAnimation() {
-      let animation = '';
-
-      for (let row = 0; row < numRows; row++) {
-        for (let col = 0; col < numCols; col++) {
-          let char;
-
-          if ((row < 5 || row > 7) && (col >= 8 && col <= 17)) {
-            char = '&nbsp;';
-          } else {
-            char = chars[Math.floor(Math.random() * chars.length)];
-          }
-
-          animation += char;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hide scrollbars */
+            color: #000;
+            background: #333;
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+        .container {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            align-items: center; /* Center items vertically */
+            width: 100%;
+            max-width: 1000px;
+            padding: 20px; /* Add padding */
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        .content, .hadesLogo {
+            margin: 0;
+            font-family: "Ubuntu Mono", monospace;
+            font-weight: 700;
+            font-style: normal;
+            padding: 0 10px;
+            color: #fff;
+        }
+        .content {
+            flex: 1;
+            text-align: left;
+        }
+        .hadesLogo {
+            font-family: monospace;
+            white-space: nowrap;
+            text-shadow: 0 0 5px cyan;
+            flex: 1;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1em;
+        }
+        span {
+            color: red;
+        }
+        .social-links {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            color: #fff;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 1.5em;
+            transition: opacity 0.3s;
+            z-index: 2;
+        }
+        .social-links a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .social-links::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 0;
+            height: 100%;
+            border-left: 3px solid #fff;
+            transition: border-color 0.3s;
         }
 
-        animation += '<br>';
-      }
+        @media (max-width: 768px) {
+            .social-links {
+                top: auto;
+                bottom: 20px;
+                left: 50%;
+                padding-bottom: 1em;
+                transform: translateX(-50%);
+                flex-direction: row;
+            }
 
-      container.innerHTML = animation;
-    }
+            .social-links::before {
+                display: none;
+            }
 
-    function showSweetAlert() {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+            }
+
+            .content {
+                max-width: 100%;
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .hadesLogo {
+                margin-bottom: 20px;
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 769px) {
+            h1 {
+                font-size: 4em;
+                padding-top: 1.3em;
+            }
+
+            .hadesLogo {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="social-links">
+        <a href="https://www.instagram.com/yinghades_" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/hadespwnme" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:hadespwn0@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="#" id="discord-icon"><i class="fab fa-discord"></i></a>
+    </div>
+    <div class="container">
+        <div class="hadesLogo"></div>
+        <div class="content">
+            <h1>Hi, I'm <span id="changeName">Hades</span></h1>
+            <p>I am a cyber security enthusiast, in free time I'm playing CTF, also a probsetter on a few CTF platforms. I like listening to music or watching Chinese dramas.</p>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 30, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: {
+                    type: "polygon",
+                    stroke: { width: 0, color: "#000000" },
+                    polygon: { nb_sides: 6 }
+                },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ffffff",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 4,
+                    direction: "none",
+                    random: true,
+                    out_mode: "out"
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onclick: { enable: true, mode: "push" }
+                },
+                modes: {
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+
+        const container = document.querySelector('.hadesLogo');
+        const chars = ['0', '1'];
+        const numCols = 26;
+        const numRows = 13;
+        const delay = 100;
+
+        function generateMatrixAnimation() {
+            let animation = '';
+
+            for (let row = 0; row < numRows; row++) {
+                for (let col = 0; col < numCols; col++) {
+                    let char;
+                    if ((row < 5 || row > 7) && (col >= 8 && col <= 17)) {
+                        char = '&nbsp;';
+                    } else {
+                        char = chars[Math.floor(Math.random() * chars.length)];
+                    }
+                    animation += char;
+                }
+                animation += '<br>';
+            }
+            container.innerHTML = animation;
+        }
+        setInterval(generateMatrixAnimation, delay);
+
+        const words = ['Hades', 'Pentester'];
+        const changeNameElement = document.getElementById('changeName');
+        let wordIndex = 0;
+        const scrambleDelay = 2000;
+        const scrambleSpeed = 50;
+
+        function scrambleText(newText, callback) {
+            const currentText = changeNameElement.innerText;
+            const maxLength = Math.max(currentText.length, newText.length);
+            let scrambleIndex = 0;
+
+            const interval = setInterval(() => {
+                const scrambleArray = [];
+                for (let i = 0; i < maxLength; i++) {
+                    if (i < scrambleIndex && i < newText.length) {
+                        scrambleArray.push(newText[i]);
+                    } else {
+                        scrambleArray.push(chars[Math.floor(Math.random() * chars.length)]);
+                    }
+                }
+                changeNameElement.innerText = scrambleArray.slice(0, newText.length).join('');
+                scrambleIndex++;
+                if (scrambleIndex > maxLength) {
+                    clearInterval(interval);
+                    callback();
+                }
+            }, scrambleSpeed);
+        }
+
+        function changeText() {
+            wordIndex = (wordIndex + 1) % words.length;
+            scrambleText(words[wordIndex], () => {
+                setTimeout(changeText, scrambleDelay);
+            });
+        }
+
+        setTimeout(changeText, scrambleDelay);
+        
+        function showSweetAlert() {
       Swal.fire({
         title: 'Username:',
         text: '.pwn0',
@@ -118,15 +276,9 @@
         }
       });
     }
-
-    function startMatrixAnimation() {
-      setInterval(generateMatrixAnimation, delay);
-    }
-
-    startMatrixAnimation();
-
+    
     const discordIcon = document.getElementById('discord-icon');
     discordIcon.addEventListener('click', showSweetAlert);
-  </script>
+    </script>
 </body>
 </html>
