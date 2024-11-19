@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hades</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="src/output.css">
+</head>
+
+<body class="bg-gray-700 text-white justify-center items-center">
+    <div id="particles-js" class="absolute
+    inset-0 z-[-1]"></div>
+    <nav class="top-0 left-0 flex">
+        <button id="navbarToggle" class="rounded-full bg-gray-600 p-3 m-2 hover:bg-amber-300 transition-all duration-700 transform translate-x-[-100%] md:p-4 md:w-16 md:h-16">
+            <svg id="toggleIcon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 fill-current md:w-9 md:h-9">
+                <path d="M0 13.01v-2l7.09-2.98.58 1.94-5.1 2.05 5.16 2.05-.63 1.9Zm16.37 1.03 5.18-2-5.16-2.09.65-1.88L24 10.95v2.12L17 16zm-2.85-9.98H16l-5.47 15.88H8.05Z"/>
+            </svg>
+        </button>
+
+        <div id="navbarMenu" class="hidden absolute font-exo shadow-lg  text-white left-5 rounded top-20 z-50">
+            <ul class="flex flex-col font-medium bg-gray-50 rounded mt-4">
+              <li>
+                 <a href="#home" class="block  hover:bg-blue-700 py-2 px-3 rounded text-gray-700 text-lg hover:text-sky-100">HOME</a>
+              </li>
+              <li>
+                 <a href="#about" class="block text-gray-700 py-2 px-3 rounded text-lg hover:text-sky-100 hover:bg-blue-700">ABOUT</a>
+              </li>
+              <li>
+                 <a href="#certificate" class=" block text-gray-700 py-2 px-3 rounded text-lg hover:text-sky-100 hover:bg-blue-700">CERTIFICATE</a>
+              </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="hero pb-9 px-1 opacity-0 transition-opacity duration-500">
+      <div class="container flex flex-col md:flex-row-reverse items-center relative z-10 min-h-screen">
+        <div class="hadesLogo md:pr-10 text-xl md:text-4xl mt-3 text-cyan-500 font-mono font-bold text-center md:ml-20"></div>
+        <div class="mt-10 text-center mx-auto md:text-left">
+          <h1 class="text-3xl md:text-5xl font-exo font-bold">Hello, I am <span class="text-red-500 font-geist font-bold" id="changeName">Hades</span></h1>
+          <h2 class="pt-4 font-medium text-xl">I am a cyber security enthusiast, CTF player, and probsetter on a few CTF platforms!</h2>
+          <div class="button justify-between md:text-center md:mt-10">
+            <a href="#" class="inline-flex rounded-lg mt-6 ml-4 bg-blue-500 py-2 px-3 text-xl font-bold">CySec Module</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <script src="src/script.js"></script>
+</body>
+</html>
