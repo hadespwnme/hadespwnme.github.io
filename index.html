@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hadespwnme</title>
+  <link rel="stylesheet" href="src/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <div id="binaryMatrix"></div>
+  <div id="mainContent">
+    
+    <div class="hero">
+      <div class="hero-img hadesLogo" data-aos="fade-right"></div>
+      <div class="title">
+        <p class="hero-title" data-aos="fade-left">
+          Hello I am <span id="animated-text">Hadespwnme</span>
+        </p>
+        <p class="hero-subtitle" data-aos="fade-right">Cybersecurity Enthusiast & CTF Player</p>
+        <div class="social-icons">
+            <a href="https://github.com/hadespwnme" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://instagram.com/amr.mrf_" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:hadespwn0@gmail.com">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+          <a href="/blog/" class="btn" data-aos="fade-right">Writeup</a>
+        </div>
+      </div>
+    
+      <section id="about" class="about-section">
+        <h2 class="about-heading" data-aos="fade-down">About Me</h2>
+        <p class="about-subheading" data-aos="fade-left">Live by code and raised by ethics.</p>
+        <div class="about-profile" data-aos="zoom-in">
+          <img src="assets/profile.png" alt="Profile" class="about-img" />
+        </div>
+        <h3 class="about-title" data-aos="fade-left">Hello, I'm</h3>
+        <h1 class="about-name" data-aos="fade-right">Hades</h1>
+        <p class="about-desc" data-aos="fade-up">
+          Saya tertarik pada dunia IT, khususnya pada bagian Cyber Security. Sejak menduduki kelas 2 SMP atau Junior High School. Sekarang suka sekali bermain Capture The Flag(CTF).
+        </p>
+      </section>
+      
+      <footer class="site-footer">
+        <div class="footer-container">
+          <div class="footer-copy">
+            <p>&copy; <span id="year"></span> Hadespwnme. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+  </div>
+
+  <script src="src/script.js"></script>
+  <script src="src/welcome.js"></script>
+  <script src="src/matrixEffect.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    setTimeout(() => {
+      const main = document.getElementById("mainContent");
+      main.style.display = "block";
+  
+      document.getElementById("binaryMatrix").style.opacity = "0";
+      setTimeout(() => {
+        document.getElementById("binaryMatrix").style.display = "none";
+        AOS.init({ duration: 800, once: false });
+        AOS.refresh();
+      }, 1000);
+    }, 4000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+title: "Hadespwnme"
+description: "Cybersecurity & CTF Blog"
+baseurl: ""
+url: "https://hadespwnme.github.io"
+theme: null
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate
+paginate: 10
+paginate_path: "/blog/page:num"
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    default_lang: bash
