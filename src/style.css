@@ -220,10 +220,15 @@ body.blog-page {
   color: white;
 }
 
+img.img-post {
+  width: 70%;
+  border-radius: 8%;
+}
+
 .post-section {
   max-width: 1200px;
   margin: 5rem auto;
-  padding: 2rem;
+  padding: 3rem 3vw;
   background: rgba(11, 11, 31, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -340,7 +345,7 @@ body.blog-page {
 }
 
 .post-card:hover {
-  transform: translateY(-5px);
+  transfor2m: translateY(-5px);
   box-shadow: 0 8px 20px rgba(142, 68, 173, 0.3);
 }
 
@@ -387,12 +392,12 @@ body.blog-page {
 }
 
 pre code {
-  font-size: 3rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.8;
   font-family: 'JetBrains Mono', 'Courier New', monospace;
   padding: 1rem;
   border-radius: 6px;
-  background-color: #0d1117; /* Cocok dengan tema dark GitHub */
+  background-color: #0d1117;
   display: block;
   overflow-x: auto;
   color: #dcdcdc;
@@ -498,6 +503,9 @@ a {
     font-size: 1.5rem;
   }
   
+  img.img-post {
+    width: 30%;
+  }
 }
 
 @media (max-width: 767px) {
