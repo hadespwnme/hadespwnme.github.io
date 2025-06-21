@@ -25,7 +25,7 @@ body, html {
   position: absolute;
   opacity: 0;
   transition: all 1s ease;
-  font-size: 2vw;
+  font-size: 2rem;
   color: white;
   text-shadow: 0 0 5px aqua, 0 0 10px cyan, 0 0 20px deepskyblue;
 }
@@ -456,6 +456,10 @@ a {
 
 
 @media (min-width: 1024px) {
+  #binaryMatrix {
+    font-size: 1rem;
+  }
+
   .hero {
     flex-direction: row;
     justify-content: space-between;
