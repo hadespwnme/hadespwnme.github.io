@@ -4,7 +4,7 @@ title: "HTB Writeup – Nocturnal"
 date: 2025-04-13
 image: /assets/machine/nocturnal/nocturnal.jpg
 tags: [htb, linux, web]
-excerpt: "Scanning port terlebih dahulu..."
+excerpt: "CVE-2023-46818: exploit POST parameter to /admin/language_edit.php"
 ---
 
 <center>
